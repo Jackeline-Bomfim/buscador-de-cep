@@ -36,7 +36,7 @@ public class PrincipalBuscaCep {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
-            System.out.println(json);
+            //System.out.println(json);
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             EnderecoViaCep meuEnderecoViaCep = gson.fromJson(json, EnderecoViaCep.class);
