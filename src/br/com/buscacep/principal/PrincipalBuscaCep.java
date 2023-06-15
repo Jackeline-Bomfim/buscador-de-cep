@@ -12,6 +12,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class PrincipalBuscaCep {
@@ -44,10 +45,12 @@ public class PrincipalBuscaCep {
 
             Endereco meuEndereco = new Endereco(meuEnderecoViaCep);
             //System.out.println(meuEndereco);
-            System.out.println("Endereço: " + meuEndereco.getEndereco());
-            System.out.println("Bairro: " + meuEndereco.getBairro());
-            System.out.println("Cidade: " + meuEndereco.getCidade());
-            System.out.println("Estado: " + meuEndereco.getEndereco());
+
+            if (Objects.isNull(meuEndereco.getEndereco())) {
+                System.out.println("CEP não localizado");
+            } else {
+                System.out.println(meuEndereco.toString());
+            }
 
 
             FileWriter escrita = new FileWriter("endereco.json");

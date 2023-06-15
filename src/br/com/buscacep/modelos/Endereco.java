@@ -52,6 +52,6 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "(Cep: " + cep + " - Endereço: " + endereco + " - Bairro: " + bairro + " - Cidade: " + cidade + " - Estado: " + estado +")";
+        return "\nEndereço: " + endereco + "\nBairro: " + bairro + "\nCidade: " + cidade + "\nEstado: " + estado;
     }
 }
